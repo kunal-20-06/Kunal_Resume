@@ -940,20 +940,23 @@ body {
 
 
 
-/* Hero Section */
+/* ===============================
+   HERO SECTION – GLASS + GLOW
+   =============================== */
+
 .hero-section {
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
-    align-items: center;        /* Vertical centering */
-    justify-content: center;    /* Horizontal centering */
+    align-items: center;
+    justify-content: center;
     text-align: center;
     background: linear-gradient(135deg, #0f1419 0%, #1a2332 100%);
     position: relative;
     overflow: hidden;
-    padding: 0 20px; /* Minimal side padding for small screens */
+    padding: 0 20px;
 }
 
-/* Soft glow / radial highlight */
+/* Subtle teal glow background */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -961,31 +964,57 @@ body {
     left: 50%;
     width: 900px;
     height: 600px;
-    transform: translate(-50%, -50%); /* perfectly centers the glow */
+    transform: translate(-50%, -50%);
     background: radial-gradient(circle, rgba(23, 162, 184, 0.15) 0%, transparent 70%);
     border-radius: 50%;
     z-index: 0;
+    filter: blur(40px);
 }
 
-/* Center container itself */
+/* Flex container centering */
 .hero-section .container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 0; /* neutralize global container padding if any */
+    padding: 0;
 }
 
-/* Hero Content Box */
+/* Glass hero content box with animated gradient border */
 .hero-content {
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
     position: relative;
     z-index: 1;
+    padding: 60px 40px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px) saturate(180%);
+    border: 2px solid transparent;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    animation: fadeInUp 1s ease both;
 }
 
-/* Hero Text Styles */
+/* Animated glowing border (pseudo-element magic) */
+.hero-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 2px;
+    background: linear-gradient(135deg, #00ffff, #00b3b3, #0099cc, #00ffff);
+    background-size: 400% 400%;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: borderFlow 6s ease infinite;
+    z-index: -1;
+}
+
+/* Title */
 .hero-title {
     font-family: 'Poppins', sans-serif;
     font-size: 4rem;
@@ -996,6 +1025,7 @@ body {
     animation: fadeInUp 0.8s ease;
 }
 
+/* Subtitle */
 .hero-subtitle {
     font-size: 1.5rem;
     color: #17a2b8;
@@ -1004,6 +1034,7 @@ body {
     animation: fadeInUp 0.8s ease 0.2s both;
 }
 
+/* Description */
 .hero-description {
     font-size: 1.1rem;
     color: #b8b8b8;
@@ -1017,7 +1048,7 @@ body {
     font-weight: 700;
 }
 
-/* Buttons layout */
+/* Buttons */
 .hero-buttons {
     display: flex;
     gap: 20px;
@@ -1026,18 +1057,39 @@ body {
     animation: fadeInUp 0.8s ease 0.6s both;
 }
 
-/* Responsive adjustments */
+/* Hover micro-interaction */
+.hero-content:hover {
+    transform: translateY(-6px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+}
+
+/* Keyframes for animated gradient border */
+@keyframes borderFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Responsive scaling */
 @media (max-width: 768px) {
+    .hero-content {
+        padding: 40px 20px;
+    }
+
     .hero-title {
         font-size: 2.8rem;
     }
+
     .hero-subtitle {
         font-size: 1.2rem;
     }
+
     .hero-description {
         font-size: 1rem;
     }
 }
+
 
 /* Buttons */
 .btn {
