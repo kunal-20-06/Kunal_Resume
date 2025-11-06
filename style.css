@@ -1233,23 +1233,33 @@ body {
     margin-bottom: 8px;
 }
 
-/* Coin look for the PNG */
+/* Glowing Bitcoin-style coin */
 .company-icon img {
-    width: 2rem;
-    height: 2rem;
+    width: 1.8rem;
+    height: 1.8rem;
     vertical-align: middle;
-    border-radius: 50%;             /* Makes it circular */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* Subtle depth */
-    background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(0,0,0,0.15)); /* Soft inner gloss */
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 215, 0, 0.4),   /* warm gold highlight */
+        rgba(184, 134, 11, 0.3) 40%,  /* mid-tone gold */
+        rgba(255, 215, 0, 0.1) 70%, 
+        transparent 100%);
+    box-shadow: 
+        0 0 6px rgba(255, 200, 0, 0.4),   /* outer glow */
+        0 2px 4px rgba(0,0,0,0.3);        /* depth */
     animation: iconSpin 3s ease-in-out infinite;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Optional hover polish (feels interactive, not flashy) */
+/* Hover: golden shimmer pop */
 .company-icon img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+    transform: scale(1.12);
+    box-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.6),
+        0 3px 6px rgba(0,0,0,0.3);
 }
+
+
 
 /* Keep your original spin animation */
 @keyframes iconSpin {
