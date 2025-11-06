@@ -1236,8 +1236,8 @@ body {
 /* Previously the emoji had font-size: 1.8rem — 
    so we’ll visually match that size for the PNG */
 .company-icon img {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2rem;
+    height: 2rem;
     vertical-align: middle;
     animation: iconSpin 3s ease-in-out infinite;
 }
@@ -1245,20 +1245,10 @@ body {
 /* Keep your original spin animation */
 @keyframes iconSpin {
     0% { transform: rotate(0deg); }
-    50% { transform: rotate(15deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(20deg); }
+    75% { transform: rotate(10deg); } 
     100% { transform: rotate(0deg); }
-}
-
-@keyframes iconSpin {
-    0%, 100% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(-10deg);
-    }
-    75% {
-        transform: rotate(10deg);
-    }
 }
 
 .framework-tags {
