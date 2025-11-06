@@ -1251,15 +1251,36 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.company-icon {
+    font-size: 1.8rem;
+    vertical-align: middle;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, 
+        rgba(255, 215, 0, 0.4),   /* warm gold highlight */
+        rgba(184, 134, 11, 0.3) 40%,  /* mid-tone gold */
+        rgba(255, 215, 0, 0.1) 70%, 
+        transparent 100%);
+    box-shadow: 
+        0 0 6px rgba(255, 200, 0, 0.4),   /* outer glow */
+        0 2px 4px rgba(0,0,0,0.3);        /* depth */
+    animation: iconSpin 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
 /* Hover: golden shimmer pop */
-.company-icon img:hover {
+.company-icon:hover {
     transform: scale(1.12);
     box-shadow: 
         0 0 10px rgba(255, 215, 0, 0.6),
         0 3px 6px rgba(0,0,0,0.3);
 }
 
-
+.company-icon img:hover {
+    transform: scale(1.12);
+    box-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.6),
+        0 3px 6px rgba(0,0,0,0.3);
+}
 
 /* Keep your original spin animation */
 @keyframes iconSpin {
