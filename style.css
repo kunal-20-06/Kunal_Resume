@@ -1233,13 +1233,22 @@ body {
     margin-bottom: 8px;
 }
 
-/* Previously the emoji had font-size: 1.8rem — 
-   so we’ll visually match that size for the PNG */
+/* Coin look for the PNG */
 .company-icon img {
     width: 2rem;
     height: 2rem;
     vertical-align: middle;
+    border-radius: 50%;             /* Makes it circular */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);  /* Subtle depth */
+    background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(0,0,0,0.15)); /* Soft inner gloss */
     animation: iconSpin 3s ease-in-out infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional hover polish (feels interactive, not flashy) */
+.company-icon img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.25);
 }
 
 /* Keep your original spin animation */
