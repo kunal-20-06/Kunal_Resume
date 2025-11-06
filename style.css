@@ -1233,54 +1233,20 @@ body {
     margin-bottom: 8px;
 }
 
-.company-icon {
-    font-size: 1.8rem;
+/* Previously the emoji had font-size: 1.8rem — 
+   so we’ll visually match that size for the PNG */
+.company-icon img {
+    width: 1.8rem;
+    height: 1.8rem;
+    vertical-align: middle;
     animation: iconSpin 3s ease-in-out infinite;
 }
 
-.company-section {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.company-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #ffcf40, #e1a100, #b06f00);
-  box-shadow: 
-    0 3px 6px rgba(0, 0, 0, 0.3),
-    inset 0 2px 4px rgba(255, 255, 255, 0.3),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.company-icon-img {
-  width: 22px;
-  height: 22px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
-}
-
-/* Hover Interaction */
-.company-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 
-    0 4px 10px rgba(255, 204, 0, 0.6),
-    inset 0 2px 5px rgba(255, 255, 255, 0.4);
-}
-
-/* Company Text */
-.mentorship-company {
-  font-size: 18px;
-  font-weight: 600;
-  color: #2d2d2d;
-  margin: 0;
-  letter-spacing: 0.3px;
+/* Keep your original spin animation */
+@keyframes iconSpin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(15deg); }
+    100% { transform: rotate(0deg); }
 }
 
 @keyframes iconSpin {
