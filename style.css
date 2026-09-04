@@ -1238,19 +1238,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
-    background: radial-gradient(circle at 30% 30%, 
-        rgba(255, 223, 70, 0.7),   /* bright gold highlight */
-        rgba(218, 165, 32, 0.6) 40%,  /* strong mid gold */
-        rgba(255, 180, 0, 0.3) 70%, 
-        transparent 100%);
-    box-shadow: 
-        0 0 8px rgba(255, 210, 0, 0.6),   /* stronger golden aura */
-        0 2px 4px rgba(0,0,0,0.35);        /* subtle depth */
+    background: transparent;
+    box-shadow: none;
     animation: iconSpin 3s ease-in-out infinite;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .company-icon img {
@@ -1260,14 +1254,10 @@ body {
     vertical-align: middle;
 }
 
-/* Hover shimmer */
+/* Hover */
 .company-icon:hover {
     transform: scale(1.12);
-    box-shadow: 
-        0 0 12px rgba(255, 220, 0, 0.8),
-        0 3px 8px rgba(0,0,0,0.4);
 }
-
 
 /* Keep your original spin animation */
 @keyframes iconSpin {
